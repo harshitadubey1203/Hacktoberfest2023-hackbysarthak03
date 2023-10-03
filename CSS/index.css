@@ -9,17 +9,20 @@
 
 /* Navbar Section */
 .navbar {
-    background-color: aquamarine;
+    background-color: #007BFF;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-size: 40px;
     font-family: 'Gabarito', cursive;
-    padding: 10px 25px;
+    padding: 0px 25px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-list {
@@ -28,29 +31,161 @@
 }
 
 .navbar-list-item {
-    font-size: 30px;
+    font-size: 18px;
     padding: 10px 20px;
     cursor: pointer;
+    transition: color 0.3s;
 }
+.navbar-list-item a {
+    text-decoration: none;
+    color: #fff; /* Change link color to white */
+    transition: color 0.3s; /* Add smooth color transition */
+}
+
 
 .navbar a {
     text-decoration: none;
     color: black;
 }
 
-/* Additional styles for the "Contributors" link */
+/* Additional styles for the "Contributors" link
 .navbar-list-item a {
     color: inherit;
-}
+} */
 
 .navbar-list-item a:hover {
     color: #ff9900;
 }
+/* Carousel styles */
+/* .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+} */
+/* .carousel-item{
+    height: 100vh;
+    min-height: 300px;
+}
+.carousel-caption{
+    bottom: 220px;
+    z-index: 2;
+}
+.carousel-caption h5{
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+.carousel-caption p{
+    width: 60%;
+    margin: auto;
+    line-height: 1.9;
+}
+.carousel-inner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+} */
+.carousel-caption {
+    position: absolute;
+    top: 50%; /* Vertically center the caption */
+    left: 0;
+    right: 0;
+    text-align: center; /* Center align text horizontally */
+    transform: translateY(-50%); /* Adjust vertically */
+}
+
+.carousel-caption h5 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    line-height: 1.9;
+}
+
+
+/* Add animation to the slides */
+@keyframes slide {
+    0%, 100% { transform: translateX(0%); }
+    25% { transform: translateX(0%); }
+    50% { transform: translateX(-100%); }
+    75% { transform: translateX(-100%); }
+}
+
+/* Add CSS for previous and next buttons (optional) */
+/* .carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #007BFF;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+} */
+/* @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.carousel-caption {
+		bottom: 370px;
+	}
+	.carousel-caption p {
+		width: 100%;
+	}}
+    @media only screen and (max-width:767px) {
+    
+        .navbar-nav {
+            text-align: center;
+        }
+        .carousel-caption {
+            bottom: 125px;
+        }
+        .carousel-caption h5 {
+            font-size: 17px;
+        }
+        .carousel-caption a {
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+        .carousel-caption p {
+            width: 100%;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+    
+} */
 
 /* Hamburger menu icon */
 .menu-toggle {
     display: none;
     font-size: 24px;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -64,6 +199,12 @@
         display: none;
     }
 }
+/* /To make the card profile circular/ */
+
+.card .img-sec img {
+    border-radius: 50%;
+}
+
 
 
 /* Body Section */
@@ -242,4 +383,25 @@
 .card:hover .github img {
     filter: grayscale(0); /* Hilangkan efek grayscale pada gambar saat dihover */
 }
+/* Mobile navigation styles */
+.navbar-list.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #007BFF; /* Match the navbar background color */
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.navbar-list.active .navbar-list-item {
+    padding: 10px 20px;
+    text-align: center;
+}
+.navbar-list-item:hover {
+    background-color: #0056b3; /* Change background color on hover */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
